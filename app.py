@@ -14,9 +14,9 @@ def login():
     contraseña=request.form.get("contraseña")
     bd=request.form.get("bd")
     conectar=psycopg2.connect(dbname=bd, user=usuario, password=contraseña, host="localhost")
-    cursor = conectar.cursor()
+    cursor=conectar.cursor()
     cursor.execute("SELECT nombrecorto FROM cofradias;")
-    cofradias = cursor.fetchall()
+    cofradias=cursor.fetchall()
     for c in cofradias:
 	cofra.append(c)
     return render_template("cofra.html",cofra=cofra)
