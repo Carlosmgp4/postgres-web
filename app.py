@@ -19,4 +19,4 @@ def login():
     cofradias = cursor.fetchall()
     for c in cofradias:
 	cofra.append(c)
-    return render_template("login.html",cofra=cofra)
+    return render_template("cofra.html",cofra=cofra)
